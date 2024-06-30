@@ -27,6 +27,10 @@ namespace SocialMedia
 
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
+            modelBuilder.Entity<Story>()
+              .HasMany(s => s.Media)
+              .WithOne(m => m.story)
+              .OnDelete(DeleteBehavior.Cascade);
         }
 
     }

@@ -6,7 +6,6 @@ using SocialMedia.Models.DTO;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace SocialMedia.Controllers
 {
@@ -46,13 +45,12 @@ namespace SocialMedia.Controllers
                 }
             }
 
-            // Create user object
             var user = new ApplicationUser
             {
                 UserName = model.Username,
                 Email = model.Email,
                 PhoneNumber = model.Phone,
-                Image = imageUser // Assign the byte array of the image to the user object
+                Image = imageUser 
             };
 
             // Attempt to create the user
