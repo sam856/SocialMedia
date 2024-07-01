@@ -31,6 +31,11 @@ namespace SocialMedia
               .HasMany(s => s.Media)
               .WithOne(m => m.story)
               .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Posts>()
+            .HasMany(s => s.Media)
+            .WithOne(m => m.Post)
+            .OnDelete(DeleteBehavior.Cascade);
         }
 
     }

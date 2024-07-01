@@ -4,7 +4,7 @@ namespace SocialMedia.Models
 {
     public class Comments
     {
-        public string Id { get; set; }
+        public string Id { get; set; }= Guid.NewGuid().ToString();
         public string CommentText { get; set; }
         [ForeignKey("UserId")]
 
